@@ -1,0 +1,31 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+Django= "==3.0.6"
+sentry-sdk= "==0.7.8"
+sendgrid= "==5.6.0"
+dj-database-url= "==0.5.0"
+gunicorn= "==19.9.0"
+requests = "*"
+django-sendgrid-v5 = "*"
+django-background-tasks = "*"
+django-ipware = "*"
+python-dateutil = "*"
+psycopg2-binary = "*"
+boto3 = "*"
+dj-static = "*"
+django-storages = "*"
+django-precise-bbcode = "*"
+pyyaml = "*"
+ua-parser = "*"
+user-agents = "*"
+django-user-agents = "*"
+django-tinymce = "*"
+
+[requires]
+python_version = "3.7"

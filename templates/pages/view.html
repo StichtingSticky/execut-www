@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% if page.is_two_column_page %}
+  <div class="copy" id="two-column">
+    <div class="column" id="main">
+      {{ page.body|safe }}
+    </div>
+    <div class="column" id="side">
+      {{ page.second_column_body|safe }}
+    </div>
+  </div>
+{% else %}
+  <div class="copy">
+  {{ page.body|safe }}
+  </div>
+{% endif %}
+{% endblock %}

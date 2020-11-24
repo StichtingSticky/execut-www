@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="copy">
+<div id="schedule">
+      <h1>Programme</h1>
+      <p>On {{ site.committee.event_day }} our venue will most likely host seven consecutive speakers, each of whom will give a talk on a particular aspect of software and technology. In addition to this lunch and drinks are provided, offering a chance for networking with other attendees and our partners.
+   
+      {% if activities %}
+      {% for activity in activities %}
+        <div class="schedule-table">
+          {% if activity.activity_kind == 'break' %}
+            <div class="schedule-row organisational">
+              <div><code>{{ activity.commences_at|time:"H:i" }}</code></div>
+              <div>{{ activity.name }}</div>
+            </div>
+          {% else %}
+             <div class="schedule-row">
+              <div><code>{{ activity.commences_at|time:"H:i" }}</code></div>
+              <div>
+                {% for speaker in activity.speakers.all %}
+                  {{ speaker }} 
+                {% endfor %}
+              </div>
+              <div>{{ activity.name }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      {% else %}
+        <p>No activities were found for this event</p>
+      {% endif %}
+
+
+
+  <p>Short breaks (10 minutes) are provided between talks. Due to sustainability considerations at least half of the lunch at <code>exec(ut)</code> will be vegetarian, with several vegan options. Various dishes and drinks will be available, so you most certainly won't go hungry. If you have any dietary restrictions you can notify us of that when you buy your ticket.</p>
+
+  </div>
+</div>
+
+{% endblock %}

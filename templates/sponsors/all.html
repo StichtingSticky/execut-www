@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="partner-overview">
+      {% for tier in sponsors %}
+      <div class="partner-tier" id="{{ tier.css_class }}">
+        <h1>{{ tier.name }} partners</h1>
+        {% if tier.sponsors %}
+          {% for sponsor in tier.sponsors %}
+          <a href="/partners/optiver" alt="More about {{ sponsor.name }}">
+          <div class="partner">
+            <img src="{{ sponsor.logo.url }}" style='max-width: 50%' class="partner-logo" alt="Partner logo">
+          </div></a>
+          {% endfor %}
+        {% else %}
+        <p style='text-align: center'>No sponsors belonging to {{ tier.name }} found for this event.</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+</div>
+{% endblock %}
