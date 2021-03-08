@@ -25,6 +25,26 @@ def speakers(request):
 
     return render(request, "speakers/all.html", context)
 
+def single_speaker(request, speaker_id, speaker_slug):
+
+    site = get_site(request)
+
+    # Grab the current speaker
+
+    speaker = get_object_or_404(Speaker, pk=speaker_id)
+
+    page_title = speaker
+
+    # Ready to build the page
+
+    context = {
+        "page_title": page_title,
+        "site": site,
+        "speaker": speaker
+    }
+
+    return render(request, "speakers/single_speaker.html", context)
+
 def programme(request):
 
     site = get_site(request)

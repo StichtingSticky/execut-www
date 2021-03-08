@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="copy">
+    <div id="speakers">
+        <h1>Our remarkable speakers</h1>
+        <p><code>exec(ut)</code>'s speakers come from a wide variety of backgrounds and will be presenting an equally wide variety of interesting talks. Below you can find their bios and talk-abstracts, providing you with a sneak peak into their presentations.</p>
+        <div class="speakergrid">
+        {% for speaker in speakers %}
+          <div class="speakercard">
+            <a href="{% url 'pages:single_speaker' speaker.id speaker|slugify %}" alt="Talk">
+            <div class="photoblock"><img src="{{ speaker.photo.url }}" class="speaker-photo" alt="{{ speaker }}"></div>
+            <div class="textblock"><h2>{{ speaker }}</h2>
+            <p>{{ speaker.short_description }}</p></div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}
