@@ -35,6 +35,7 @@ class Commissioner(models.Model):
     photo = models.FileField(upload_to='commissioners/', verbose_name='foto', null=True, blank=True)
     linkedin_page = models.URLField(verbose_name='linkedin-pagina', max_length=300)
     visible = models.BooleanField(verbose_name='zichtbaar', default=True)
+    official_order = models.IntegerField()
 
     def __str__(self):
         return self.first_name + " " + self.last_name
@@ -73,6 +74,7 @@ class Sponsor(models.Model):
     sponsorship_kind = models.ForeignKey(SponsorshipTier, on_delete=models.PROTECT, verbose_name="soort sponsorschap")
     website = models.URLField(verbose_name='website')
     logo = models.FileField(upload_to='sponsors/', verbose_name='logo')
+    long_description = tinymce_models.HTMLField(verbose_name='lange omschrijving')
 
     def __str__(self):
         return self.name
@@ -113,6 +115,7 @@ class Site(models.Model):
     custom_css = models.FileField(upload_to='custom_css/', verbose_name='custom-css', null=True, blank=True)
     description = models.CharField(max_length=300)
     keywords = models.CharField(max_length=500)
+    is_active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

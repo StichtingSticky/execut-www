@@ -12,6 +12,18 @@
 {% else %}
   <div class="copy">
   {{ page.body|safe }}
+  {% if commissioners %}
+  <br />
+  <h1>The committee</h1>
+  <div class="committee">
+  {% for commissioner in commissioners %}
+  <div>
+    <div class="name"><a href="{{ commissioner.linkedin_page }}">{{ commissioner }}</a></div>
+    <div class="role">{{ commissioner.role }}</div>
+  </div>
+  {% endfor %}
+  </div>
+  {% endif %}
   </div>
 {% endif %}
 {% endblock %}

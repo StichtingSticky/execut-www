@@ -11,5 +11,6 @@ urlpatterns = [
     path('partners/', core_views.sponsors, name='view_sponsors'),
     path('programme/', core_views.programme, name='view_programme'),
     path('<slug:slug>/', views.view_page, name='view_page'),
-    path('speakers/<int:speaker_id>/<slug:speaker_slug>', core_views.single_speaker, name='single_speaker')
+    path('speakers/<int:speaker_id>/<slug:speaker_slug>', core_views.single_speaker, name='single_speaker'),
+    path('sponsor/<int:sponsor_id>/<slug:sponsor_slug>', core_views.single_sponsor, name='single_sponsor')
 ]

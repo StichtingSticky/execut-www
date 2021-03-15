@@ -6,7 +6,7 @@
         <h1>{{ tier.name }} partners</h1>
         {% if tier.sponsors %}
           {% for sponsor in tier.sponsors %}
-          <a href="/partners/optiver" alt="More about {{ sponsor.name }}">
+          <a href="{% url 'pages:single_sponsor' sponsor.id sponsor|slugify %}" alt="More about {{ sponsor.name }}">
           <div class="partner">
             <img src="{{ sponsor.logo.url }}" style='max-width: 50%' class="partner-logo" alt="Partner logo">
           </div></a>

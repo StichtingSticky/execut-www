@@ -15,6 +15,9 @@ def get_site(request):
     except Site.DoesNotExist:
         raise Http404("This exec(ut)-site does not exist")
 
+    if not site.is_active:
+        raise Http404("exec(ut) will launch shortly - stay tuned!")        
+
     return site
 
 def view_page(request, slug=None):
@@ -35,17 +38,29 @@ def view_page(request, slug=None):
 
     # Check if the page belongs to this site.
 
-   #if not page.site_set.where(site=site).exists():
-   #     raise Http404("This page could not be found")
+    if page not in site.pages.filter(pk=page.id):
+        raise Http404("This page could not be found")
 
     # All clear. Ready to build the static page.
+
+    # Include committee if this is the about page
+    
+    if slug == "about":
+
+        commissioners = site.committee.commissioners.all().order_by('official_order')
+
+    else:
+
+        commissioners = None
+
 
     page_title = page.name
 
     context = {
         "page_title": page_title,
         "site": site,
-        "page": page
+        "page": page,
+        "commissioners": commissioners
     }
 
     return render(request, "pages/view.html", context)

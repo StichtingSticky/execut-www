@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="copy" id="two-column">
+    <div class="column" id="biography">
+    <code><a href="{% url 'pages:view_sponsors' %}" alt="Back to full overview">< Back to partner overview</a></code>
+        <h1 id="abstract">{{ sponsor }}</h1>
+      {{ sponsor.long_description|safe }}
+    </div>
+    <div class="column" id="photograph">
+        <img src="{{ sponsor.logo.url }}" class="photograph" alt="{{ sponsor }}">
+    </div>
+  </div>
+{% endblock %}

@@ -45,6 +45,26 @@ def single_speaker(request, speaker_id, speaker_slug):
 
     return render(request, "speakers/single_speaker.html", context)
 
+def single_sponsor(request, sponsor_id, sponsor_slug):
+
+    site = get_site(request)
+
+    # Grab the current sponsor
+
+    sponsor = get_object_or_404(Sponsor, pk=sponsor_id)
+
+    page_title = sponsor
+
+    # Ready to build the page
+
+    context = {
+        "page_title": page_title,
+        "site": site,
+        "sponsor": sponsor
+    }
+
+    return render(request, "sponsors/single_sponsor.html", context)
+
 def programme(request):
 
     site = get_site(request)
