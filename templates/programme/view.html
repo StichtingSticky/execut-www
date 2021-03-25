@@ -3,11 +3,11 @@
 <div class="copy">
 <div id="schedule">
       <h1>Programme</h1>
-      <p>On {{ site.committee.event_day }} our venue will most likely host seven consecutive speakers, each of whom will give a talk on a particular aspect of software and technology. In addition to this lunch and drinks are provided, offering a chance for networking with other attendees and our partners.
+      <p>On {{ site.committee.event_day }} our venue will most likely host {{ num_speakers }} consecutive speakers, each of whom will give a talk on a particular aspect of software and technology. In addition to this lunch and drinks are provided, offering a chance for networking with other attendees and our partners.
    
       {% if activities %}
+      <div class="schedule-table">
       {% for activity in activities %}
-        <div class="schedule-table">
           {% if activity.activity_kind == 'break' %}
             <div class="schedule-row organisational">
               <div><code>{{ activity.commences_at|time:"H:i" }}</code></div>
@@ -25,7 +25,7 @@
             </div>
           {% endif %}
         {% endfor %}
-        </div>
+      </div>
       {% else %}
         <p>No activities were found for this event</p>
       {% endif %}

@@ -73,11 +73,16 @@ def programme(request):
 
     activities = Activity.objects.filter(committee=site.committee).order_by('commences_at')
 
+    # Number of speakers
+
+    num_speakers = site.committee.speakers.all().count()
+
     page_title = "Programme"
 
     context = {
         "page_title": page_title,
         "site": site,
+        "num_speakers": num_speakers,
         "activities": activities
     }
 

@@ -53,6 +53,12 @@ def view_page(request, slug=None):
 
         commissioners = None
 
+    tickets = False
+
+    if slug == "tickets":
+
+        tickets = True
+
 
     page_title = page.name
 
@@ -60,7 +66,8 @@ def view_page(request, slug=None):
         "page_title": page_title,
         "site": site,
         "page": page,
-        "commissioners": commissioners
+        "commissioners": commissioners,
+        "tickets": tickets
     }
 
     return render(request, "pages/view.html", context)
