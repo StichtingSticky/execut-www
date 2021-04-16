@@ -18,7 +18,7 @@
               <div><code>{{ activity.commences_at|time:"H:i" }}</code></div>
               <div>
                 {% for speaker in activity.speakers.all %}
-                  {{ speaker }} 
+                  <a href="{% url 'pages:single_speaker' speaker.id speaker|slugify %}">{{ speaker }}</a>
                 {% endfor %}
               </div>
               <div>{{ activity.name }}</div>
