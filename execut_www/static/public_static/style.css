@@ -120,9 +120,8 @@ textarea
   text-shadow: -1px 0 var(--brown), 0 1px var(--brown), 1px 0 var(--brown), 0 -1px var(--brown);
 }
 
-.wrapper {
-  min-height: calc(100vh - 65px)
-  
+.wrapper, #container {
+  min-height: calc(100vh - 69px)
 }
 
 #footer {

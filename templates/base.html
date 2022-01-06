@@ -33,18 +33,18 @@
     <meta name="yandex-verification" content="393156b6561f6008" />
     <meta name="msvalidate.01" content="57FF189420E9813F4FA80953ACC2A600" />
     {% if tickets %}
-    <link rel="stylesheet" type="text/css" href="https://tickets.execut.nl/summer-edition-2021/widget/v1.css">
-    <script type="text/javascript" src="https://tickets.execut.nl/widget/v1.en.js" async></script>
+    <link rel="stylesheet" type="text/css" href="https://pretix.svsticky.nl/execut/2022/widget/v1.css">
+    <script type="text/javascript" src="https://pretix.svsticky.nl/widget/v1.en.js" async></script>
     {% endif %}
 
 </head>
 <body>
-{% include "header.html" %}
-{% block content %}
-   {% endblock content %}
-        </div>
+    {% include "header.html" %}
+    {% block content %}
+    {% endblock content %}
     </div>
-   {% include "footer.html" %}
+    </div>
+    {% include "footer.html" %}
 </body>
 </html>
 

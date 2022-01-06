@@ -5,7 +5,7 @@
         <h1>Our remarkable speakers</h1>
         <p><code>exec(ut)</code>'s speakers come from a wide variety of backgrounds and will be presenting an equally wide variety of interesting talks. Below you can find their bios and talk-abstracts, providing you with a sneak peak into their presentations.</p>
         <div class="speakergrid">
-        {% for speaker in speakers %}
+        {% for speaker in speakers|dictsort:"speaker" %}
           <div class="speakercard">
             <a href="{% url 'pages:single_speaker' speaker.id speaker|slugify %}" alt="Talk">
             <div class="photoblock"><img src="{{ speaker.photo.url }}" class="speaker-photo" alt="{{ speaker }}"></div>
