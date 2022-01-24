@@ -545,21 +545,8 @@ input.email {
   clear: both;
 }
 
-.partner-tier#gold .partner {
+.partner-tier .partner {
   width: 50%;
-  display: inline-block;
-  float: left;
-}
-
-.partner-tier#silver .partner {
-  width: calc(100%/2);
-  display: inline-block;
-  float: left;
-}
-
-.partner-tier#bronze .partner {
-  width: calc(100%/2);
-  display: inline-block;
   float: left;
 }
 
