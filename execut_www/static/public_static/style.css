@@ -550,6 +550,16 @@ input.email {
   float: left;
 }
 
+/* Hardcoding some companies for now */
+#chipsoft, #aegon, #dsw, #asml {
+  width: 100%;
+  margin: auto;
+}
+
+#chipsoft > .partner-logo, #aegon > .partner-logo, #dsw > .partner-logo, #asml > .partner-logo {
+  max-width: 25% !important;
+}
+
 @media (max-width: 881px) {
   .partner-overview .partner{
     width: 100% !important;
@@ -558,6 +568,10 @@ input.email {
 
   .partner-overview .partner img {
     max-width: 100%;
+  }
+
+  #chipsoft > .partner-logo, #aegon > .partner-logo, #dsw > .partner-logo, #asml > .partner-logo {
+    max-width: 100% !important;
   }
 }
 
