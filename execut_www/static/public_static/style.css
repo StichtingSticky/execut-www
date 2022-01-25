@@ -551,12 +551,12 @@ input.email {
 }
 
 /* Hardcoding some companies for now */
-#chipsoft, #aegon, #dsw, #asml {
+#chipsoft, #levarne, #dsw, #asml {
   width: 100%;
   margin: auto;
 }
 
-#chipsoft > .partner-logo, #aegon > .partner-logo, #dsw > .partner-logo, #asml > .partner-logo {
+#chipsoft > .partner-logo, #levarne > .partner-logo, #dsw > .partner-logo, #asml > .partner-logo {
   max-width: 25% !important;
 }
 
@@ -570,7 +570,7 @@ input.email {
     max-width: 100%;
   }
 
-  #chipsoft > .partner-logo, #aegon > .partner-logo, #dsw > .partner-logo, #asml > .partner-logo {
+  #chipsoft > .partner-logo, #levarne > .partner-logo, #dsw > .partner-logo, #asml > .partner-logo {
     max-width: 100% !important;
   }
 }
