@@ -28,13 +28,13 @@ def view_page(request, slug=None):
 
         # We're grabbing the home page then.
 
-        page = get_object_or_404(StaticPage, slug='home')
+        page = get_object_or_404(StaticPage, slug='home', sites=site.id)
 
     else:
 
         # Just a regular page
 
-        page = get_object_or_404(StaticPage, slug=slug)
+        page = get_object_or_404(StaticPage, slug=slug, sites=site.id)
 
     # Check if the page belongs to this site.
 
