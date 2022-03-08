@@ -1,37 +1,111 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="copy">
-<div id="schedule">
-      <h1>Programme</h1>
-      <p>On {{ site.committee.event_day }} our venue will host 6 consecutive speakers, each of whom will give a talk on a particular aspect of software and technology. These talks will be held inside Flint.</p>
-      <p>For the first time during a live exec(ut) we will host workshops throughout the day! More information about the topics, timeslots and enrollment will be announced shortly!</p>
-   
-      {% if activities %}
-      <div class="schedule-table">
-      {% for activity in activities %}
-          {% if activity.activity_kind == 'break' %}
-            <div class="schedule-row organisational">
-              <div><code>{{ activity.commences_at|time:"H:i" }}</code></div>
-              <div>{{ activity.name }}</div>
-            </div>
-          {% else %}
-             <div class="schedule-row">
-              <div><code>{{ activity.commences_at|time:"H:i" }}</code></div>
-              <div>
-                {% for speaker in activity.speakers.all %}
-                  <a href="{% url 'pages:single_speaker' speaker.id speaker|slugify %}">{{ speaker }}</a>
-                {% endfor %}
-              </div>
-              <div>{{ activity.name }}</div>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-      {% else %}
-        <p>No activities were found for this event</p>
-      {% endif %}
+  <div id="schedule">
+    <h1>Programme</h1>
+    <p>On {{ site.committee.event_day }} our venue will host 6 consecutive speakers, each of whom will give a talk on a
+      particular aspect of software and technology. These talks will be held inside Flint.</p>
+    <p>For the first time during a live exec(ut) we will host workshops throughout the day! More information about the
+      topics, timeslots and enrollment will be announced shortly!</p>
 
-  <p>Short breaks (10 minutes) are provided between talks. During the lunch and coffee break, we will provide some free time in which you can expand your professional network by meeting our partners!</p>
+    <div class="schedule-table">
+      <div class="schedule-row header">
+        <div class="time">Time</div>
+        <div class="talk">AFASzaal</div>
+        <div class="workshop">Zaal 2 (Workshop)</div>
+      </div>
+      <div class="schedule-row organisational">
+        <div class="time"><code>10:00</code></div>
+        <div class="talk">Opening &amp; Welcome</div>
+      </div>
+      <div class="schedule-row">
+        <div class="time"><code>10:15</code></div>
+        <div class="talk">
+          <div>
+            <a href="/speakers/11/speaker-chipsoft">Speaker Chipsoft</a>
+          </div>
+          <div>Opening Keynote provided by Chipsoft</div>
+        </div>
+      </div>
+      <div class="schedule-row">
+        <div class="time"><code>11:25</code></div>
+        <div class="talk">
+          <div>
+            <a href="/speakers/7/hinda-haned">Hinda Haned</a>
+          </div>
+          <div>Defining and mitigating algorithmic bias: a practitioner's perspective</div>
+        </div>
+      </div>
+      <div class="schedule-row organisational">
+        <div class="time"><code>12:10</code></div>
+        <div>Lunch</div>
+      </div>
+      <div class="schedule-row">
+        <div class="time"><code>13:00</code></div>
+        <div class="talk">
+          <div>
+            <a href="/speakers/10/anke-schlichting">Anke Schlichting</a>
+          </div>
+          <div>Topic T.B.A.</div>
+        </div>
+        <div class="workshop">
+          <div>
+            <a href="/speakers/15/workshop-chipsoft">Workshop Chipsoft</a>
+          </div>
+          <div>Topic T.B.A.</div>
+        </div>
+      </div>
+      <div class="schedule-row">
+        <div class="time"><code>13:55</code></div>
+        <div class="talk">
+          <div>
+            <a href="/speakers/8/matthijs-van-de-laar">Matthijs van de Laar</a>
+          </div>
+          <div>Talk Storytelling in an Autonomous Game World</div>
+        </div>
+        <div class="workshop">
+          <div>
+            <a href="/speakers/13/workship-sogeti">Workshop Sogeti</a>
+          </div>
+          <div>Talk to your software robot!</div>
+        </div>
+      </div>
+      <div class="schedule-row organisational">
+        <div class="time"><code>14:50</code></div>
+        <div>Coffee break</div>
+      </div>
+      <div class="schedule-row">
+        <div class="time"><code>15:20</code></div>
+        <div class="talk">
+          <div>
+            <a href="/speakers/9/michiel-overeem">Michiel Overeem</a>
+          </div>
+          <div>Low-Code Platforms, Tales from a Software Architect</div>
+        </div>
+        <div class="workshop">
+          <div>
+            <a href="/speakers/14/workshop-aegon">Workshop Aegon</a>
+          </div>
+          <div>Digital escaperoom</div>
+        </div>
+      </div>
+      <div class="schedule-row">
+        <div class="time"><code>16:15</code></div>
+        <div class="talk">
+          <div>
+            <a href="/speakers/12/mike-joosten">Mike Joosten</a>
+          </div>
+          <div>View the world through APIs</div>
+        </div>
+      </div>
+      <div class="schedule-row organisational">
+        <div class="time"><code>17:15</code></div>
+        <div class="talk">Closing &amp; drinks</div>
+      </div>
+    </div>
+
+    <p>Short breaks (10 minutes) are provided between talks. During the lunch and coffee break, we will provide some
+      free time in which you can expand your professional network by meeting our partners!</p>
   </div>
 </div>
 

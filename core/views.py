@@ -11,7 +11,7 @@ def speakers(request):
 
     # Grab the speakers for this committee
 
-    speakers = site.committee.speakers.all()
+    speakers = site.committee.speakers.exclude(first_name="Workshop")
 
     page_title = "Speakers"
 

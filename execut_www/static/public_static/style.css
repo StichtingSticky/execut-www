@@ -292,22 +292,29 @@ input.email {
     background-color: var(--orange);
 }
 
-.schedule-table .schedule-row div {
-    display: inline-block;
-    float: left;
+.schedule-table .header {
+  background-color: var(--brown);
+  color: var(--off-white);
 }
 
-.schedule-table .schedule-row div:nth-of-type(1) {
-    width: 10%;
+.schedule-table .schedule-row div{
+  display: inline-block;
+  float: left;
 }
 
-.schedule-table .schedule-row div:nth-of-type(2) {
-    width: 30%;
+.schedule-table .schedule-row .time {
+  width: 10%;
+}
+.schedule-table .schedule-row .talk {
+  width: calc(45% - 10px);
+}
+.schedule-table .schedule-row .workshop {
+  width: calc(45% - 10px);
+  font-style: normal;
 }
 
-.schedule-table .schedule-row div:nth-of-type(3) {
-    width: 60%;
-    font-style: normal;
+.talk > div, .workshop > div {
+  width: 50%;
 }
 
 @media (max-width: 880px) {
@@ -316,23 +323,25 @@ input.email {
         width: 100%;
         box-sizing: border-box;
     }
-    .schedule-table .schedule-row div:nth-of-type(1) {
-        display: inline-block;
-        float: left;
-        width: 3rem;
-        margin-right: 1rem;
+
+    .schedule-table .schedule-row .time {
+      display: inline-block;
+      float: left;
+      width: 3rem;
+      margin-right: 1rem;
     }
-    .schedule-table .schedule-row div:nth-of-type(2) {
-        display: inline-block;
-        float: left;
-        width: initial;
+    .schedule-table .schedule-row .talk {
+      display: inline-block;
+      float: left;
+      width: initial;
     }
-    .schedule-table .schedule-row div:nth-of-type(3) {
-        display: block;
-        clear: both;
-        width: calc(100% - 4rem);
-        margin-left: 4rem;
-        font-style: normal;
+
+    .schedule-table .schedule-row .workshop {
+      display: block;
+      clear: both;
+      width: calc(100% - 4rem);
+      margin-left: 4rem;
+      font-style: normal;
     }
     .copy #photograph img {
         display: block;
